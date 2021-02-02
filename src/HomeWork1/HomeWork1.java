@@ -30,26 +30,58 @@ public class HomeWork1 {
         int g = 12;
         defSignNum(g);
         System.out.println("");
+
+        //Часть 6: метод, который возвращает TRUE если число отрицательное и FALSE если число положительное
+        System.out.println("Часть шестая");
+        int part6 = 158;
+        System.out.println("Число: "+part6);
+        System.out.println("Метод вернул: " + defPosOrNeg(part6));
+        System.out.println("");
+
+        //Часть 7:
+        System.out.println("Часть седьмая");
+        String string1 = new String("Сергей");
+        writeHello(string1);
+
+        //Часть 8
+        System.out.println("");
+        int year = 2020;
+        checkYear(year);
+
+
+
     }
     // Метод для вычисления выражения a*(b+(c/d))
     public static double calculate (float a,float b, float c, float d){
-        double x = a*(b+(c/d));
-        return x;
+        return  a*(b+(c/d));
     }
 
     // Метод для определения лежит ли сумма двух чисел в пределах от 10 до 20
     public static boolean compare (int a, int b){
-        int c;
-        c= a+b;
-        if (c>=10 && c<=20) {
-            return true;
-        } else return false;
+        int c = a+b;
+        return (c>=10 && c<=20);
+
     }
 
-    //
+    // Метод определяет положительное число на входе или отрицательное и выводит в консоль соответствующее сообщение
     public static void defSignNum (int a){
         if (a >=0) System.out.println("Число " + a + " - положительное");
         else System.out.println("Число "+ a +" - отрицательное");
+    }
+
+    // Метод определяет положительное или отрицательное число на входе и возвращает результат (True-отрицательное, False - положительное)
+    public static boolean defPosOrNeg (int a){
+        return (a<0);
+    }
+    //
+    public static void writeHello (String a){
+        System.out.println("Привет, " + a + "!");
+    }
+    //
+    public static void checkYear(int year){
+        if ((year % 4 ==0 && year % 100 != 0) || year % 400 == 0) System.out.println("Год " + year + " - високосный");
+        else System.out.println("Год " + year + " - не високосный");
+
     }
 
 }
